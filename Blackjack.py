@@ -18,7 +18,7 @@ class player(object):
         return card_batch, played
 
     def move(self,l):
-        p1 = input("Player, do you want hit or stand?")
+        p1 = input("Player, do you hit or stand?")
         while p1 != 'hit' and p1 != 'stand':
             p1 = input("Your input is not acceptable. Input either "'hit'" or "'stand'"")
         if p1=='stand':
@@ -64,8 +64,8 @@ while len(i) > 5:
     c, dealer_card1 = f.cards(a)
     b, card2 = f.cards(c)
     d, dealer_card2 = f.cards(b)
-    print("Your first two cards are", str(card1),"and", str(card2))
-    print("Dealer's first card is", str(dealer_card1))
+    print("Your hand is", str(card1),"and", str(card2))
+    print("Dealer's is", str(dealer_card1))
     l=[card1,card2]
     i,y=f.move(l)
     l=[card1,card2,y]
