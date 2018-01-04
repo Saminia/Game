@@ -17,7 +17,7 @@ def check_win():
         return False
 
 l=[]
-f=[1,2,3,4,5,6,7,8,9]
+f=list(range(1, 10))
 while len(l) != 9 and check_win() != True:
     if len(l) % 2 == 0:
         p = int(input('Player1, Enter the number of block you want to play:'))
