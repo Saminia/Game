@@ -3,7 +3,7 @@ import numpy as np
 list1=["A","Q","K","J"]+ list(range(2,11))
 list2=["Peak", "Heart", "Cross", "Diamond"]
 card_set = [(a,b) for a in list1 for b in list2]
-bet=100
+bet=input(" What amount would you like to bet? ")
 money=input("How much money you start with?")
 
 class player(object):
@@ -60,6 +60,7 @@ i=card_set
 
 while len(i) > 5:
     #print(i)
+    bet=input(" What amount would you like to bet? ")
     a, card1 = f.cards(card_set)
     c, dealer_card1 = f.cards(a)
     b, card2 = f.cards(c)
