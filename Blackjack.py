@@ -4,7 +4,7 @@ list1=["A","Q","K","J"]+ list(range(2,11))
 list2=["Peak", "Heart", "Cross", "Diamond"]
 card_set = [(a,b) for a in list1 for b in list2]
 bet=100
-money=1000
+money=input("How much money you start with?")
 
 class player(object):
     def __init__(self,decision,card_batch):
