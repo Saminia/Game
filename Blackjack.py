@@ -3,7 +3,7 @@ import numpy as np
 list1=["A","Q","K","J"]+ list(range(2,11))
 list2=["Peak", "Heart", "Cross", "Diamond"]
 card_set = [(a,b) for a in list1 for b in list2]
-money=input("How much money you start with?")
+g=int(input("How much money you start with?"))
 
 class player(object):
     def __init__(self,decision,card_batch):
@@ -56,42 +56,32 @@ class player(object):
 
 f=player("hit",card_set)
 i=card_set
-
+money=g
 while len(i) > 5:
     #print(i)
-    bet=input(" What amount would you like to bet? ")
-    if bet > money:
-        print(invalid value to bet!)
-        input(" What amount would you like to bet? ")
-    else
-        a, card1 = f.cards(card_set)
-        c, dealer_card1 = f.cards(a)
-        b, card2 = f.cards(c)
-        d, dealer_card2 = f.cards(b)
-        print("Your hand is", str(card1),"and", str(card2))
-        print("Dealer's is", str(dealer_card1))
-        l=[card1,card2]
-        i,y=f.move(l)
-        l=[card1,card2,y]
-        dealer_cards=[dealer_card1,dealer_card2]
-        m,n=f.count(dealer_cards)
-        j,k=f.count(l)
-        money=f.result(j,k,m,bet,money)
-        print(money)
+    bet=int(input("What amount would you like to bet? "))
+    while bet > money:
+        print("invalid value to bet!")
+        bet=int(input("What amount would you like to bet? "))
 
-if money >1000:
-    print("you won " , money-1000 , "dollars")
+    a, card1 = f.cards(card_set)
+    c, dealer_card1 = f.cards(a)
+    b, card2 = f.cards(c)
+    d, dealer_card2 = f.cards(b)
+    print("Your hand is", str(card1),"and", str(card2))
+    print("Dealer's is", str(dealer_card1))
+    l=[card1,card2]
+    i,y=f.move(l)
+    l=[card1,card2,y]
+    dealer_cards=[dealer_card1,dealer_card2]
+    m,n=f.count(dealer_cards)
+    j,k=f.count(l)
+    money=f.result(j,k,m,bet,money)
+    print(money)
+
+if money >g:
+    print("you won " , money-g , "dollars")
 
 else:
-    print("you lost ", 1000-money, "dollars")
-
-
-
-
-
-
-
-
-
-
+    print("you lost ", g-money, "dollars")
 
